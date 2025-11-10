@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: com.gs.dsa.strings.LongestSubstringDistinctCharsTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.050 s <<< FAILURE! -- in com.gs.dsa.strings.LongestSubstringDistinctCharsTest
+com.gs.dsa.strings.LongestSubstringDistinctCharsTest.examples -- Time elapsed: 0.002 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+
+expected: 3
+ but was: -2
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at com.gs.dsa.strings.LongestSubstringDistinctCharsTest.examples(LongestSubstringDistinctCharsTest.java:6)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+

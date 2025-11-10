@@ -1,0 +1,23 @@
+-------------------------------------------------------------------------------
+Test set: com.gs.dsa.strings.LongestUniformSubstringTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.006 s <<< FAILURE! -- in com.gs.dsa.strings.LongestUniformSubstringTest
+com.gs.dsa.strings.LongestUniformSubstringTest.example -- Time elapsed: 0.005 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+
+Expecting actual:
+  [-2, -2]
+to contain exactly (and in same order):
+  [2, 4]
+but some elements were not found:
+  [2, 4]
+and others were not expected:
+  [-2, -2]
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at com.gs.dsa.strings.LongestUniformSubstringTest.example(LongestUniformSubstringTest.java:5)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+

@@ -1,0 +1,17 @@
+-------------------------------------------------------------------------------
+Test set: com.gs.dsa.games.CircularArrayGameLengthTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.012 s <<< FAILURE! -- in com.gs.dsa.games.CircularArrayGameLengthTest
+com.gs.dsa.games.CircularArrayGameLengthTest.simple -- Time elapsed: 0.008 s <<< FAILURE!
+java.lang.AssertionError: 
+
+Expecting actual:
+  -2
+to be greater than or equal to:
+  0
+
+	at com.gs.dsa.games.CircularArrayGameLengthTest.simple(CircularArrayGameLengthTest.java:5)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+

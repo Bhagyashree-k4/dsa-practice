@@ -1,0 +1,36 @@
+-------------------------------------------------------------------------------
+Test set: com.gs.dsa.arrays.SearchInRotatedSortedArrayTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.044 s <<< FAILURE! -- in com.gs.dsa.arrays.SearchInRotatedSortedArrayTest
+com.gs.dsa.arrays.SearchInRotatedSortedArrayTest.hardCasesMerged -- Time elapsed: 0.006 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+
+expected: 2
+ but was: -2
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at com.gs.dsa.arrays.SearchInRotatedSortedArrayTest.hardCasesMerged(SearchInRotatedSortedArrayTest.java:10)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+com.gs.dsa.arrays.SearchInRotatedSortedArrayTest.typical -- Time elapsed: 0.002 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+
+expected: 4
+ but was: -2
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at com.gs.dsa.arrays.SearchInRotatedSortedArrayTest.typical(SearchInRotatedSortedArrayTest.java:6)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+com.gs.dsa.arrays.SearchInRotatedSortedArrayTest.logNGate -- Time elapsed: 0.029 s <<< FAILURE!
+java.lang.AssertionError: Likely not O(log n): r21=1.0, r42=2.4444444444444446
+	at com.gs.dsa.util.ComplexityGate.assertComplexity(ComplexityGate.java:42)
+	at com.gs.dsa.arrays.SearchInRotatedSortedArrayTest.logNGate(SearchInRotatedSortedArrayTest.java:15)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+

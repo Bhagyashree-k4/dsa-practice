@@ -1,0 +1,19 @@
+-------------------------------------------------------------------------------
+Test set: com.gs.dsa.arrays.MoveZerosToEndTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.082 s <<< FAILURE! -- in com.gs.dsa.arrays.MoveZerosToEndTest
+com.gs.dsa.arrays.MoveZerosToEndTest.stableMove -- Time elapsed: 0.077 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+
+Actual and expected have the same elements but not in the same order, at index 2 actual element was:
+  0
+whereas expected element was:
+  4
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at com.gs.dsa.arrays.MoveZerosToEndTest.stableMove(MoveZerosToEndTest.java:5)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
