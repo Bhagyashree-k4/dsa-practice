@@ -2,24 +2,26 @@
 package com.gs.dsa.arrays;
 
 /**
- * Find the median of two sorted arrays without fully merging them.
- * Expected: ~O(log (m+n)) using partition-based binary search.
- * Edge cases: empty one array, skewed sizes, duplicates, negatives.
+ * Use binary search on the smaller array to partition both arrays such that left parts
+ * contain half of the elements. Check if all left elements are ≤ right elements.
+ * if not, adjust the partition. Once the correct partition is found,
+ * compute the median from the border elements in O(log min(n, m)) time.
  */
 public final class MedianOfTwoSortedArrays {
-    private MedianOfTwoSortedArrays() {}
-    /** TODO: Implement optimal partition-based median. */
+    private MedianOfTwoSortedArrays() {
+    }
+
     public static double findMedianSortedArrays(int[] a, int[] b) {
 
 
-        if(a.length > b.length){
-            return findMedianSortedArrays(b,a);
+        if (a.length > b.length) {
+            return findMedianSortedArrays(b, a);
         }
 
         int len1 = a.length, len2 = b.length;
         int low = 0, high = len1;
 
-        while(low<=high) {
+        while (low <= high) {
 
             int mid1 = low + ((high - low) / 2);
             int mid2 = ((len1 + len2 + 1) / 2) - mid1;
@@ -44,5 +46,60 @@ public final class MedianOfTwoSortedArrays {
 
         return Double.NaN;
 
+    }
+
+    public double findMedianSortedArraysUsingMerge(int[] nums1, int[] nums2) {
+        int l1 = nums1.length;
+        int l2 = nums2.length;
+        int t = l1 + l2;
+        int count = 0;
+        int ind2 = t / 2;
+        int ind1 = ind2 - 1;
+        int ele1 = 0, ele2 = 0;
+        int i = 0, j = 0;
+
+        while (i < l1 && j < l2) {
+            if (nums1[i] <= nums2[j]) {
+                if (count == ind1) ele1 = nums1[i];
+                if (count == ind2) {
+                    ele2 = nums1[i];
+                    break;
+                }
+                i++;
+            } else {
+                if (count == ind1) ele1 = nums2[j];
+                if (count == ind2) {
+                    ele2 = nums2[j];
+                    break;
+                }
+                j++;
+            }
+            count++;
+        }
+
+        while (i < l1 && count <= ind2) {
+            if (count == ind1) ele1 = nums1[i];
+            if (count == ind2) {
+                ele2 = nums1[i];
+                break;
+            }
+            i++;
+            count++;
+        }
+
+        while (j < l2 && count <= ind2) {
+            if (count == ind1) ele1 = nums2[j];
+            if (count == ind2) {
+                ele2 = nums2[j];
+                break;
+            }
+            j++;
+            count++;
+        }
+
+        if (t % 2 == 0)
+            return (ele1 + ele2) / 2.0;
+        else
+            return ele2;
     }
 }
