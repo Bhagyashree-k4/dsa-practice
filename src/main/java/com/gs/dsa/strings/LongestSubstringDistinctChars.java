@@ -2,7 +2,6 @@
 package com.gs.dsa.strings;
 
 import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Length of longest substring with all distinct characters (sliding window).

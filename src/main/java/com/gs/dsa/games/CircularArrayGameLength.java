@@ -12,46 +12,36 @@ public final class CircularArrayGameLength {
     /**
      * TODO: Implement Floyd cycle detection tailored to index mapping.
      */
-    public static int cycleLength(int[] nums) {
-        if (nums == null || nums.length == 0) return -1;
+    public static Integer cycleLength(int[] arr) {
+        int slow = 0, fast = 0;
 
-        int n = nums.length;
-        boolean[] visited = new boolean[n];
+        while (true) {
+            // move slow
+            if (slow < 0 || slow >= arr.length) return null;
+            slow = arr[slow];
 
-        for (int i = 0; i < n; i++) {
-            if (visited[i]) continue;
+            // move fast once
+            if (fast < 0 || fast >= arr.length) return null;
+            fast = arr[fast];
 
-            int slow = i, fast = i;
-            while (true) {
-                slow = nextIndex(nums, slow);
-                fast = nextIndex(nums, nextIndex(nums, fast));
+            // move fast twice
+            if (fast < 0 || fast >= arr.length) return null;
+            fast = arr[fast];
 
-                if (slow == -1 || fast == -1) break;
-                if (slow == fast) {
-                    return countCycleLength(nums, slow);
-                }
-            }
-            visited[i] = true;
+            // names meet → cycle found
+            if (slow == fast) break;
         }
-        return -1;
-    }
 
-    private static int nextIndex(int[] nums, int idx) {
-        if (idx < 0 || idx >= nums.length) return -1;
-        int next = nums[idx];
-        if (next == 0) return -1;
-        int mapped = (next - 1);
-        if (mapped < 0 || mapped >= nums.length) return -1;
-        return mapped;
-    }
-
-    private static int countCycleLength(int[] nums, int start) {
-        int length = 1;
-        int curr = nextIndex(nums, start);
-        while (curr != start && curr != -1) {
-            length++;
-            curr = nextIndex(nums, curr);
+        // measure length
+        int count = 1;
+        fast = arr[fast];
+        while (slow != fast) {
+            fast = arr[fast];
+            count++;
         }
-        return length;
+
+        return count;
     }
+
 }
+
